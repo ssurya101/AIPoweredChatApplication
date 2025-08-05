@@ -144,7 +144,7 @@ If a question is not related to science or mathematics education, respond with: 
             response = client.chat.completions.create(
                 model="gpt-3.5-turbo",  # Using GPT-3.5-turbo for cost efficiency
                 messages=messages_for_api,
-                max_tokens=10,  # Limit response length to control costs
+                max_tokens=500,  # Limit response length to control costs
                 temperature=0.7,  # Controls randomness - 0.7 gives good balance
             )
             
@@ -300,4 +300,5 @@ class MultiChatService:
         Returns:
             List[str]: List of service names
         """
+
         return list(self.services.keys())
